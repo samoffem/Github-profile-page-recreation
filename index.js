@@ -217,6 +217,7 @@ const updateUI = (user)=>{
     document.getElementById('floating-img').src = user.avatarUrl
     document.querySelector('.repo-number').textContent = user.repositories.totalCount
     document.querySelector('.avatar').src = user.avatarUrl
+    document.getElementById('mobile-nav-pic').src = user.avatarUrl
     document.querySelector('.full-name').textContent = user.name
     document.getElementById('about-content').textContent = user.bio
     document.getElementById('followers-count').textContent = user.followers.totalCount
