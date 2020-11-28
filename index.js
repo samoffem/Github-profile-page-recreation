@@ -107,9 +107,15 @@ const formatDate = (date)=>{
         formatted_date = `${diff_in_days} days ago`
 
     }else if(r_date_year === n_date_year && n_date_month === r_date_month && ((Math.abs(now_date - received_date)/ 36e5)<24)){
-        // get hours
+        // get hours and minutes
         let hours = Math.floor(Math.abs(now_date - received_date)/ 36e5); //36e5 is scientific notation for 60 * 60 * 1000 i.e 3600000
-        formatted_date = `${hours} hours ago`
+        let minutes = Math.floor(Math.abs(now_date-received_date)/6e4)
+        if(hours > 0){
+            formatted_date = `${hours} hours ago`
+        } else{
+            formatted_date = `${minutes} minutes ago`
+        }
+        
     }
     return formatted_date
 
